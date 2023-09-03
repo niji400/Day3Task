@@ -1,0 +1,16 @@
+let obj1={name:"Person1",age:5};
+let obj2={age:5,name:"Person1"};
+function comapreJson(obj1,obj2){
+  let o1=JSON.parse(obj1);
+  let o2=JSON.parse(obj2);
+  if(Object.keys(o1).length!==Object.keys(o2).length){
+return false;
+  }
+  for(var key in o1) {
+    if(!o2.hasOwnProperty(key) || o1[key] !== o2[key]) {
+      return false;
+    }
+  }
+  
+  return true;
+  }
